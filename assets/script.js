@@ -1,6 +1,7 @@
 
 document.getElementById('search').addEventListener('click', function() {
     var city = document.getElementById('city').value;
+    clearForecast();
     fetchCurrentWeather(city);
     fetchForecast(city);
     clearSearch(city);
@@ -12,6 +13,10 @@ document.getElementById('search').addEventListener('click', function() {
 
 });
 
+function clearForecast() {
+    var forecastSection = document.getElementById('forecast');
+    forecastSection.innerHTML = ''; // Clear forecast section
+}
 function clearSearch(city) {
     document.getElementById('city').value = '';
 }
